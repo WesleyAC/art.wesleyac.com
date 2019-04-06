@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>about the framebuffer vortex</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<center style="font-family: monospace, monospace;">
+			<h1>framebuffer vortex</h1>
+			<br>
+			<div style="width: 30em">
+				"framebuffer vortex" is a 232 byte demo written on the train to Montréal for <a href="http://synchrony.nyc/2019/">Synchrony 2019</a>.
+
+				<br>
+				<br>
+
+				The source code is as follows:
+				<div style="text-align: left">
+					<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #000000; background-color: #ffffff; }
+body { font-family: monospace; color: #000000; background-color: #ffffff; }
+* { font-size: 1em; }
+.Identifier { color: #008080; }
+.Constant { color: #c00000; }
+.Statement { color: #af5f00; }
+.PreProc { color: #c000c0; }
+-->
+					</style>
+					<pre id='vimCodeElement'>
+<span class="PreProc">import</span> mmap,math <span class="Statement">as</span> m
+q=<span class="Identifier">open</span>(<span class="Constant">&quot;</span><span class="Constant">/dev/fb0</span><span class="Constant">&quot;</span>,<span class="Constant">&quot;</span><span class="Constant">r+</span><span class="Constant">&quot;</span>)
+b=mmap.mmap(<span class="Constant">3</span>,<span class="Constant">8294400</span>)
+z=j=k=l=f=<span class="Constant">248</span>
+<span class="Statement">while</span> <span class="Constant">1</span>:
+ <span class="Statement">try</span>:n=<span class="Constant">7680</span>*<span class="Identifier">int</span>(m.cos(i)*r+<span class="Constant">540</span>)+<span class="Constant">4</span>*<span class="Identifier">int</span>(m.sin(i)*r+<span class="Constant">960</span>);b[n:<span class="Constant">3</span>+n]=<span class="Identifier">bytes</span>([j,k,l]);i+=<span class="Constant">4</span>;r+=m.sin(z);j=j%f+<span class="Constant">1</span>
+ <span class="Statement">except</span>:i=r=<span class="Constant">0</span>;z+=<span class="Constant">.01</span>;k=k%f+<span class="Constant">8</span>;l=l%f+<span class="Constant">9</span>
+					</pre>
+				</div>
+
+				It must be run on a 1080p display, inside of a virtual terminal (not a terminal emulator).
+
+				<br>
+				<br>
+
+				A demo version, ported to Javascript, can be found <a href="/framebuffervortex/">here</a>
+			</div>
+		</center>
+	</body>
+</html>
