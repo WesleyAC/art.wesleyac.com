@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>circles, spirals, and rainbows</title>
+<style>
+html,body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+</style>
+	</head>
+	<body>
+		<canvas class="glslCanvas" data-fragment-url="shade.frag" id="x"></canvas>
+<script>
+function update_size() {
+	var canvas = document.getElementById("x");
+	canvas.width = document.documentElement.clientWidth;
+	canvas.height = document.documentElement.clientHeight;
+}
+update_size();
+setInterval(update_size, 32);
+</script>
+		<script type="text/javascript" src="GlslCanvas.min.js"></script>
+	</body>
+</html>
